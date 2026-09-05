@@ -5,6 +5,7 @@
 | Skill | 一句話用途 | 主要情境 | 文件 |
 | --- | --- | --- | --- |
 | `card-to-vcf` | 將多張名片掃描 PDF 轉為經核對後可匯入 Google Contacts 的 VCF。 | 批次數位化名片；整併正反面與中英雙語資料。 | [README](card-to-vcf/README.md) |
+| `thinking-naval-way` | 以第一性原則與槓桿思維，判斷資訊是否值得行動或直接略過。 | 評估使用者指定的技術、商業或內容資訊。 | [README](thinking-naval-way/README.md) |
 
 ## 搜尋指引
 
