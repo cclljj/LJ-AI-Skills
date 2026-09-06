@@ -9,7 +9,7 @@ git clone <repository-url>
 cd LJ-AI-Skills
 ```
 
-將所需的 skill 複製或連結到你的 AI 工具所使用的 skills 目錄；實際安裝方式請以各 skill 的 `README.md` 為準。
+本 repository 是所有 skill 的唯一來源。依目標 AI 系統以 symlink 或複製安裝單一 skill；不要維護多份內容。請先閱讀 [跨平台相容性](PORTABILITY.md) 並選擇對應的 [platform adapter](adapters/)。
 
 ## 結構
 
@@ -19,6 +19,10 @@ cd LJ-AI-Skills
 ├── SKILLS_INDEX.md           # 所有已收錄 skills 的可搜尋清單
 ├── CONTRIBUTING.md           # 新增或更新 skill 的規範
 ├── AGENTS.md                 # 給 AI 協作者的操作規則
+├── PORTABILITY.md             # 跨平台能力矩陣與安裝原則
+├── PORTABILITY_TESTS.md       # 可攜性手動驗收
+├── adapters/                  # 各 AI 系統的載入／安裝說明
+├── scripts/                   # 安全的本機安裝輔助工具
 ├── templates/
 │   └── SKILL-README-template.md
 └── <skill-slug>/
@@ -38,5 +42,6 @@ cd LJ-AI-Skills
 - 在 `SKILLS_INDEX.md` 登錄，讓人和 AI 都能先從單一入口找到它。
 - 將可執行指令與參考內容一同納入版本控制；不要提交密碼、token、個人資料或大型衍生檔案。
 - 提供足以驗證基本功能的範例或檢查步驟。
+- 明列必要能力、可選能力與能力不足時的降級方式；平台差異只能放在 `adapters/`，不可複製核心 skill。
 
 詳細規範見 [CONTRIBUTING.md](CONTRIBUTING.md)。

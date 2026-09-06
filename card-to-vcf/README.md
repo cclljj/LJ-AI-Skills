@@ -5,9 +5,9 @@
 | 項目 | 內容 |
 | --- | --- |
 | 狀態 | 草稿 |
-| 版本 | `0.1.0` |
-| 最後更新 | `2026-09-05` |
-| 相容環境 | 具備 PDF 影像檢視、OCR 與檔案輸出能力的 AI agent；Google Contacts 匯入 |
+| 版本 | `0.2.0` |
+| 最後更新 | `2026-09-06` |
+| 相容環境 | 符合下方能力需求的 agent；Google Contacts 匯入 |
 
 ## 目的
 
@@ -41,18 +41,27 @@ card-to-vcf/
 
 請避免將不相關的敏感文件混入 PDF。名片本身含個人聯絡資料，處理時應採用符合使用者與組織規範的 AI 服務與儲存位置。
 
+## 跨平台能力
+
+| 類型 | 需求 | 缺少時的降級方式 |
+| --- | --- | --- |
+| 必要能力 | PDF 頁面檢視、OCR 或多模態辨識、多回合對話、文字輸出 | 無法讀取 PDF 時，請使用者提供清楚的頁面影像或可讀文字；不可假裝完成辨識。 |
+| 可選能力 | 建立可下載的 UTF-8 `.vcf` 檔案 | 在使用者確認後輸出完整 `vcf` code block，說明須另存為 UTF-8 `.vcf` 後再匯入。 |
+
+跨系統安裝請參考 [PORTABILITY.md](../PORTABILITY.md) 與對應 [adapter](../adapters/)；行為驗收請參考 [PORTABILITY_TESTS.md](../PORTABILITY_TESTS.md)。
+
 ## 使用方法
 
 ### 安裝或放置
 
-將整個 `card-to-vcf/` 目錄放入所使用 AI 工具的 skills 目錄，或讓該工具載入本 repository 後直接使用。執行前，AI 必須先閱讀 `SKILL.md`。
+依目標系統的 [adapter](../adapters/) 將 `card-to-vcf/` 連結或安裝到其 skill discovery 位置。若系統沒有 discovery 機制，請在開始時提供完整 `SKILL.md`。
 
 ### 最小可用範例
 
 1. 將名片掃描為 `business-cards.pdf` 後上傳，並說明：「請用 card-to-vcf 處理這份 PDF。」
 2. AI 輸出每位聯絡人的中文／英文姓名、公司、職稱、電話、Email、地址等預覽清單，以及正反面合併判斷。
 3. 使用者逐項修正，或回覆「確認產出」。
-4. AI 產出例如 `business-cards-contacts.vcf` 的檔案。
+4. AI 產出例如 `business-cards-contacts.vcf` 的檔案；若平台無檔案輸出能力，則提供完整 VCF code block 供另存。
 5. 在 Google Contacts 選擇 **Import**，選取該 `.vcf`，即可建立聯絡人。
 
 ### VCF 範例
@@ -108,3 +117,4 @@ END:VCARD
 | 日期 | 版本 | 變更 |
 | --- | --- | --- |
 | 2026-09-05 | 0.1.0 | 初始建立：PDF 名片辨識、正反面／雙語整併、人工確認與 Google Contacts VCF 匯出。 |
+| 2026-09-06 | 0.2.0 | 新增跨平台能力需求與 VCF 無檔案輸出降級方式。 |

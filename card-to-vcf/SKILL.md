@@ -46,7 +46,7 @@ Apply the user's requested corrections, additions, splits, or merges and show th
 
 ### 4. Generate vCard 3.0
 
-Create a downloadable UTF-8 `.vcf` file after confirmation. Use `BEGIN:VCARD`, `VERSION:3.0`, and `END:VCARD` for every contact.
+Create a downloadable UTF-8 `.vcf` file after confirmation when the environment supports file output. If it does not, provide the complete VCF in one clearly labeled `vcf` code block and state that the user must save it as a UTF-8 `.vcf` file. Use `BEGIN:VCARD`, `VERSION:3.0`, and `END:VCARD` for every contact.
 
 - **Chinese + English name:** `FN:中文全名 英文全名`; `N:英文姓氏;英文名字;;;`; `X-PHONETIC-LAST-NAME:中文姓氏`; `X-PHONETIC-FIRST-NAME:中文名字`; `NICKNAME:中文全名 英文全名`.
 - **Chinese-only name:** `FN:中文全名`; `N:中文姓氏;中文名字;;;`.

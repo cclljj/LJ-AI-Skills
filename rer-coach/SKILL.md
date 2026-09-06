@@ -30,6 +30,8 @@ description: Coach users through the RER (Review, Evaluate, Reshape) thinking pr
 
 四個狀態：`Review` → `Evaluate` → `Reshape` → `完成`。不准跳步，不准合併。
 
+如果平台沒有跨對話記憶，將判斷原則卡與本次 RER 狀態視為只在目前對話有效；新對話開始時請使用者重新貼上卡片與必要脈絡，不可假裝記得。
+
 ---
 
 ## 開場
